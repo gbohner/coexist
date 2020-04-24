@@ -1,9 +1,6 @@
 
 
-# COEXI(S)T - Modelling COVID-19 exit strategies for policy makers in the United Kingdom
-
-<img align="right" src="images/COexist_logo.png" width="30%">
-<br>
+# Modelling COVID-19 exit strategies for policy makers in the United Kingdom
 
 ## Executive summary 
 
@@ -15,7 +12,7 @@ Large scale testing strategies have universally relied on RT-PCR tests, which ar
 
 The UK has had enormous difficulty scaling this test.  Modifications of RT-PCR which make the test easier to scale now exist - including pooling samples, skipping the RNA extraction step, and collecting samples with spit rather than swabs.  To our knowledge, tests with these modifications are not being deployed in the UK.
 
-The easiest tests to scale are likely 'antigen' tests. These tests detect the presence of viral protein rather than RNA, and can be performed at 'point of care' using lateral-flow-assays, the same technology as used in home pregnancy tests.  The tests can therefore be deployed at population scale without the construction and organizational overhead of large centralized testing facilities.
+The easiest tests to scale are likely 'antigen' tests. These tests detect the presence of viral protein rather than RNA, and can be performed at the point of care using lateral-flow-assays, the same technology that is used in home pregnancy tests.  The tests can therefore be deployed at scale without the construction and organizational overhead of large centralized testing facilities.
 
 There is concern that antigen tests and modifications of RT-PCR will be less sensitive than the tried-and-true RT-PCR test.  Is this concern justified?
 
@@ -29,12 +26,13 @@ We implemented and investigated a number of potential exit strategies, focusing 
 
 The implementation of our model is flexible and extensively commented, allowing us and others to investigate new policy ideas in a timely manner; we next aim to investigate the optimal use of the highly imperfect antibody tests that the United Kingdom already possesses in large numbers.
 
-There are a number of heterogeneities that our model does not capture.  Most important among these may be the effect of exposure level on disease progression.  There is evidence that the severity of COVID-19 correlates with the exposure level to SARS-CoV-2; this may significantly impact the effect of home quarantine policies on the spread of severe disease.  Additionally, our model does not account for the compliance rate of a given government policy.  It is possible that the use of a relatively lower-accuracy test will lead to low compliance with home quarantine issuances.
+There are a number of heterogeneities that our model does not capture.  Most important among these may be the effect of exposure level on disease progression.  There is evidence that the severity of COVID-19 correlates with the exposure level to SARS-CoV-2; this may significantly impact the effect of home quarantine policies on the spread of severe disease.  Additionally, our model does not account for the compliance rate of a given government policy.  It is possible that the use of a relatively lower-accuracy test will lead to low compliance with home quarantine instructions.
  
-<hr>
+
 <a name="header_figure1"></a>
 
-**Summary of results** - This section compares four potential (exit strategy) policies across 91 different estimates of the current pandemic burden. Each estimate of current burden is represented by a single curve in each of the figures below.
+### Summary of results 
+This section compares four potential (exit strategy) policies across 91 different estimates of the current pandemic burden. Each estimate of current burden is represented by a single curve in each of the figures below.
 
 We first produce the expected result: stopping the lockdown entirely without a clear treatment for or vaccine against COVID-19 results in a massive second wave (Policy B, below). Most of the population becomes infected, eventually resulting in some form of herd immunity, likely at the cost of many more lives than other exit strategies.
 
@@ -70,7 +68,7 @@ One drawback of employing the 'larger number but lower reliability' testing stra
 
 ## Goals of modeling
 
-Our model can be used to investiage a number of scenarios not described above. Broadly, we sought to develop a robust epidemiological model to forecast the potential effects of specific (exit strategy) policies in the UK, given the uncertainty in the present, through:
+Our model can be used to investigate a number of scenarios not described above. Broadly, we sought to develop a robust epidemiological model to forecast the potential effects of specific (exit strategy) policies in the UK, given the uncertainty in the present, through:
 
 1. *Capturing the majority of available data* released about COVID-19, rather than focusing on particular datasets or outcomes
 2. *Directly representing interventions* as mechanistic parameters
@@ -79,6 +77,11 @@ Our model can be used to investiage a number of scenarios not described above. B
 5. *Quickly adapting* a highly mutable model to the changing present
 
 This document describes the [model](#header_model), how it uses past data to [estimate current scenarios](#header_fitting) and predict the effects of policies, and describes the [technology](#header_technology) which allows it to quickly adapt to new incoming data or policy ideas.
+
+
+<br><br>
+<img align="right" src="images/COexist_logo.png" width="30%">
+<br>
 
 <a name="header_model"></a>
 ## Model details
@@ -91,7 +94,7 @@ This document describes the [model](#header_model), how it uses past data to [es
  </p>
 
 
-We use a standard [SEIR model](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SEIR_model) extended such that we can capture available information both about the disease progression, as well as how accessible various disease states are by testing. Being tested might cause a transition in the <span style="display: inline-block;background-color:#FFFCCC">Testing State</span>; the rate of such a transition depends both on the <span style="display: inline-block;background-color:#D1E2FF">Health State</span> ([explanatory table](#healthStates)) as well the details of the test used.
+*COEXI(S)T* is a standard [SEIR model](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SEIR_model) extended such that we can capture available information both about the disease progression, as well as how accessible various disease states are by testing. Being tested might cause a transition in the <span style="display: inline-block;background-color:#FFFCCC">Testing State</span>; the rate of such a transition depends both on the <span style="display: inline-block;background-color:#D1E2FF">Health State</span> ([explanatory table](#healthStates)) as well the details of the test used.
 
 Our model is age-dependent; individuals are assigned an <span style="display: inline-block;background-color:#FFD4D1">Age State</span>, which strongly influences most transition rates, and allows policies to be applied differentially to different subsets of the population.
 
@@ -144,7 +147,7 @@ Mixing rates are also determined by <span style="display: inline-block;backgroun
 
 ### Hospitalisations
 
-People with either symptomatic infection, or for other sicknesses (baseline hospitalisation) end up in hospital. People in <span style="display: inline-block;background-color:#D1E2FF">S</span> health state may return to non-hospitalised <span style="display: inline-block;background-color:#D1E2FF">S</span> state, however for now we assume that COVID-symptomatic people in <span style="display: inline-block;background-color:#D1E2FF">I</span> state generally remain in hospital until they are <span style="display: inline-block;background-color:#D1E2FF">Recovered</span> or <span style="display: inline-block;background-color:#D1E2FF">Dead</span>.
+People with either symptomatic infection or other diseases (baseline hospitalisation) end up in hospital. People in <span style="display: inline-block;background-color:#D1E2FF">S</span> health state may return to non-hospitalised <span style="display: inline-block;background-color:#D1E2FF">S</span> state, however for now we assume that COVID-symptomatic people in <span style="display: inline-block;background-color:#D1E2FF">I</span> state generally remain in hospital until they are <span style="display: inline-block;background-color:#D1E2FF">Recovered</span> or <span style="display: inline-block;background-color:#D1E2FF">Dead</span>.
 
 The rate of hospitalisation for a patient at a given age and infection stage is computed as the product of two independent rates, one based purely on the age (older people are generally more at risk of hospitalisation), and the other purely on how far the patient has progressed into the disease. We estimate the required parameters from hospitalisation data ([Hospital Episode Statistics](https://webarchive.nationalarchives.gov.uk/20180328130140/http://digital.nhs.uk/catalogue/PUB22378), [CHESS - COVID-19 Hospitalisation in England Surveillance System](https://www.england.nhs.uk/coronavirus/wp-content/uploads/sites/52/2020/03/phe-letter-to-trusts-re-daily-covid-19-hospital-surveillance-11-march-2020.pdf), [Imperial Report #8 - Symptom progression of COVID-19](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/report-8-symptom-progression-covid-19/)).
 
@@ -152,7 +155,7 @@ The rate of hospitalisation for a patient at a given age and infection stage is 
 
 Our model considers the three major types of SARS-CoV-2 tests, which detect either: (1) viral RNA; (2) viral protein; or (3) human antibodies formed against the virus.  We call these tests ***PCR***, ***antigen***, and ***antibody*** tests, respectively. 
 
-We assume testing -- which provides uncertain information about the underlying <span style="display: inline-block;background-color:#D1E2FF">Health State</span> -- may modify the <span style="display: inline-block;background-color:#FFFCCC">Testing State</span>. This allows health and policy decisions to be made about the tested individual, for example earlier hospitalisation of (at-risk) positive individuals, or strict home quarantining (affecting the <span style="display: inline-block;background-color:#C2EDC0">Isolation State</span>).
+We assume that testing -- which provides uncertain information about the underlying <span style="display: inline-block;background-color:#D1E2FF">Health State</span> -- may modify the <span style="display: inline-block;background-color:#FFFCCC">Testing State</span>. This allows health and policy decisions to be made about the tested individual, for example earlier hospitalisation of (at-risk) positive individuals, or strict home quarantining (affecting the <span style="display: inline-block;background-color:#C2EDC0">Isolation State</span>).
 
 Individuals in the population transition between testing states depending on the type and number of tests administered; disease state of the population at time of administration; and disease state dependent characteristics of the administered test (such as false positive and negative rates).  We assumed that the number of each type of test administered each day grows as a sigmoid function, where the ***antigen*** and ***antibody*** tests become available later, but grow more steeply than ***PCR*** tests, due to their relative ease of administration.  ***PCR*** tests are assumed to be more accurate than ***antigen*** tests.  ***Antibody*** tests are positive much later in the disease than PCR and antigen tests, detecting the immunity formed in Recovered states.
 
@@ -183,7 +186,7 @@ Case isolation is considered both together with social distancing measures above
 
 ##### Immunity passports
 
-Antibody test base "proof of immunity" is a potential individual-based exit strategy from lockdown, relying on the fact that truly immune individuals cannot contract or spread the disease, and thus are free to carry on with their normal daily life. 
+An exit strategy based on allowing free travel to recovered persons (and thus presumed safe from the virus), has been frequently discussed.  Most commonly, these free travel "proof of immunity" passports are based on antibody tests.
 
 The success of such an exit strategy as the sole option relies upon the overall level of viral penetration, ultimately needing a large portion of the population to be infected to stop the risk (around ~60% immune leads to so-called "herd immunity"). Based on recent backlash around these measures, as well as initial evidence from the Netherlands [showing](https://twitter.com/globalhlthtwit/status/1250790553794592770?s=21) only 3% current penetration, this is unlikely to be a useful goal by itself.
 
@@ -235,7 +238,7 @@ We currently use the following two datasets as targets, but are actively looking
 
 In order to evaluate whether a parameter setting describes reality sufficiently well, we calculate for each day and age group the likelihood of observing the real data, where the data is assumed to be distributed around the simulated value as a negative binomial distribution with an alpha dispersion parameter of 2. We consider scenarios above a minimum threshold to be "plausible".
 
-We first choose parameter sets to investigate at random, given a set of (wide) prior assumptions about the individual parameters or combinations thereof.  We perform full simulation for each parameter set and compute their likelihoods.  When choosing the next set of parameters to investigate, we can estimate whether a parameter set may or may not represent a plausible scenario without actually doing the full simulation.  For this, we do Gaussian Process Regression with a random subset of data approximation as a surrogate to estimate the likelihoods -- from these estimates a selection function chooses which parameter sets worth fully simulating. This is similar to Sequential Model Based Optimisation (SMBO).  Unlike in SMBO we do not look for a single "best fit" scenario, but rather want a broad picture of all "plausible" scenarios.  We therefore use a selection function that prioritises exploration rather than optimisation.
+We first choose parameter sets to investigate at random, given a set of (wide) prior assumptions about the individual parameters or combinations thereof.  We perform full simulation for each parameter set and compute their likelihoods.  When choosing the next set of parameters to investigate, we can estimate whether a parameter set may or may not represent a plausible scenario without actually doing the full simulation.  For this, we do Gaussian Process Regression with a random subset of data approximation as a surrogate to estimate the likelihoods -- from these estimates a selection function chooses which parameter sets are worth fully simulating. This is similar to Sequential Model Based Optimisation (SMBO).  Unlike in SMBO we do not look for a single "best fit" scenario, but rather want a broad picture of all "plausible" scenarios.  We therefore use a selection function that prioritises exploration rather than optimisation.
 
 The set of all plausible scenarios are the ***full ensemble***.
 
@@ -292,7 +295,7 @@ In our model, the Hospital Staff are never home quarantined / hospitalised thems
 
 We do not account for non-hospital COVID-related deaths. Our initial assumption on 01 April was that all people get hospitalised before dying to COVID-19, but recent ONS and media reports challenge this assumption, and will need to be incorporated soon -- a difficult task given the lack of reliable data.
 
-Finally there are a lot of potential things to consider in terms of potential future policies, and we are looking to quickly implement any ideas that are considered by decision makers, and we hope to provide immediate feedback on their feasibility.
+Many potential future policies are left to consider. We are open to quickly implementing any ideas that are considered by policy makers, and we hope to provide immediate feedback on their feasibility.
 
 For further clarity, we summarised some of the key assumptions in the current implementation, why we did not prioritise a more detailed implementation given our current resources, and how they could be included in the future.
 
@@ -302,7 +305,7 @@ For further clarity, we summarised some of the key assumptions in the current im
 | Assumption | Why not a priority? | Future Implementation |
 | --------- | ---------------- | ---------- |
 | Long-lasting immunity | - Few known cases of reinfection<br>- Lack of data on length of immunity  | Add slow R $\rightarrow$ S transition |
-| Modelling at national level | - Widely and evenly spread pandemic | Model regions and internal travel |
+| Outcomes can be modelled at national level | - Widely and evenly spread pandemic | Model regions and internal travel |
 | Working and self-isolating population are mixing at an average rate | - The average mixing describes virus spread sufficiently<br> - Available social mixing and testing data does not differentiate | Add key (non-hospital) workers as a separate population |
 | Constant rate of contact throughout longterm lockdown | - Lack of data available | Estimate compliance with lockdown and add as time-series varying the efficiency of lockdown  | 
 |No explicit model of tracing| - Tracing is not yet happening at scale in the UK<br>- High uncertainty in potential implementations | Include as more efficient distribution of available tests / quarantining of untested people. |
@@ -316,7 +319,7 @@ For further clarity, we summarised some of the key assumptions in the current im
 
 ### Using the model in other countries
 
-We would be extremely happy for others to adapt the model to data and situations in other countries, which we could not yet do, as it requires high levels of country-specific domain knowledge that we do not possess.
+We would be extremely happy for others to adapt the model to data and situations in other countries.  Which did not attempt this because it requires high levels of country-specific domain knowledge that we do not possess.
 
 The code is fully available and thoroughly commented; you are welcome to fork the repository and try it for your own purposes. At this time we cannot offer technical support.
 
@@ -350,6 +353,8 @@ We gratefully acknowledge multiple valuable discussions with John Aston, Matt Ke
 We thank Public Health England for providing access to CHESS data to the Warwick Research Group. 
 
 We thank Amazon Web Services for providing the computational resources for the project via their [AWS Cloud Credits for Research program](https://aws.amazon.com/research-credits/) at short notice.
+
+ We thank Amaia Uriz and Sashika Coxhead for comments and support.
 
 
 

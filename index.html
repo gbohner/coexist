@@ -2,6 +2,7 @@
 <html>
 
 <head>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164481996-1"></script>
 <script>
@@ -14,6 +15,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Modelling COVID-19 exit strategies</title>
+
+
 
 
 <style type="text/css">
@@ -488,7 +491,7 @@ pre[class*="language-"] {
 
 <p>The UK has had enormous difficulty scaling this test.  Modifications of RT-PCR which make the test easier to scale now exist - including pooling samples, skipping the RNA extraction step, and collecting samples with spit rather than swabs.  To our knowledge, tests with these modifications are not being deployed in the UK.</p>
 
-<p>The easiest tests to scale are likely &lsquo;antigen&rsquo; tests. These tests detect the presence of viral protein rather than RNA, and can be performed at &lsquo;point of care&rsquo; using lateral-flow-assays, the same technology as used in home pregnancy tests.  The tests can therefore be deployed at population scale without the construction and organizational overhead of large centralized testing facilities.</p>
+<p>The easiest tests to scale are likely &lsquo;antigen&rsquo; tests. These tests detect the presence of viral protein rather than RNA, and can be performed at the point of care using lateral-flow-assays, the same technology that is used in home pregnancy tests.  The tests can therefore be deployed at scale without the construction and organizational overhead of large centralized testing facilities.</p>
 
 <p>There is concern that antigen tests and modifications of RT-PCR will be less sensitive than the tried-and-true RT-PCR test.  Is this concern justified?</p>
 
@@ -502,13 +505,13 @@ pre[class*="language-"] {
 
 <p>The implementation of our model is flexible and extensively commented, allowing us and others to investigate new policy ideas in a timely manner; we next aim to investigate the optimal use of the highly imperfect antibody tests that the United Kingdom already possesses in large numbers.</p>
 
-<p>There are a number of heterogeneities that our model does not capture.  Most important among these may be the effect of exposure level on disease progression.  There is evidence that the severity of COVID-19 correlates with the exposure level to SARS-CoV-2; this may significantly impact the effect of home quarantine policies on the spread of severe disease.  Additionally, our model does not account for the compliance rate of a given government policy.  It is possible that the use of a relatively lower-accuracy test will lead to low compliance with home quarantine issuances.</p>
-
-<hr>
+<p>There are a number of heterogeneities that our model does not capture.  Most important among these may be the effect of exposure level on disease progression.  There is evidence that the severity of COVID-19 correlates with the exposure level to SARS-CoV-2; this may significantly impact the effect of home quarantine policies on the spread of severe disease.  Additionally, our model does not account for the compliance rate of a given government policy.  It is possible that the use of a relatively lower-accuracy test will lead to low compliance with home quarantine instructions.</p>
 
 <p><a name="header_figure1"></a></p>
 
-<p><strong>Summary of results</strong> - This section compares four potential (exit strategy) policies across 91 different estimates of the current pandemic burden. Each estimate of current burden is represented by a single curve in each of the figures below.</p>
+<h3 id="toc_2">Summary of results</h3>
+
+<p>This section compares four potential (exit strategy) policies across 91 different estimates of the current pandemic burden. Each estimate of current burden is represented by a single curve in each of the figures below.</p>
 
 <p>We first produce the expected result: stopping the lockdown entirely without a clear treatment for or vaccine against COVID-19 results in a massive second wave (Policy B, below). Most of the population becomes infected, eventually resulting in some form of herd immunity, likely at the cost of many more lives than other exit strategies.</p>
 
@@ -541,9 +544,9 @@ pre[class*="language-"] {
 
 <p><em>The above figures were generated on 22 April 2020, using a full model fit that took place 21 April 2020, which incorporated hospitalisation, testing and mortality data up to and including 14 April 2020. At the time of fitting, more recent data was excluded due to its incompleteness.</em></p>
 
-<h2 id="toc_2">Goals of modeling</h2>
+<h2 id="toc_3">Goals of modeling</h2>
 
-<p>Our model can be used to investiage a number of scenarios not described above. Broadly, we sought to develop a robust epidemiological model to forecast the potential effects of specific (exit strategy) policies in the UK, given the uncertainty in the present, through:</p>
+<p>Our model can be used to investigate a number of scenarios not described above. Broadly, we sought to develop a robust epidemiological model to forecast the potential effects of specific (exit strategy) policies in the UK, given the uncertainty in the present, through:</p>
 
 <ol>
 <li><em>Capturing the majority of available data</em> released about COVID-19, rather than focusing on particular datasets or outcomes</li>
@@ -555,13 +558,13 @@ pre[class*="language-"] {
 
 <p>This document describes the <a href="#header_model">model</a>, how it uses past data to <a href="#header_fitting">estimate current scenarios</a> and predict the effects of policies, and describes the <a href="#header_technology">technology</a> which allows it to quickly adapt to new incoming data or policy ideas.</p>
 
-<br><br>
-<p><a name="header_model"></a></p>
-<p><img align="right" src="images/COexist_logo.png" width="30%">
-</p>
-<br>
-<h2 id="toc_3">Model details</h2>
+<p><br><br>
+<img align="right" src="images/COexist_logo.png" width="30%">
+<br></p>
 
+<p><a name="header_model"></a></p>
+
+<h2 id="toc_4">Model details</h2>
 
 <p><a href="https://github.com/gbohner/coexist/">Link to repository with source code.</a></p>
 
@@ -579,7 +582,7 @@ pre[class*="language-"] {
 
 <p><a name="healthStates"></a></p>
 
-<h3 id="toc_4">Disease progression</h3>
+<h3 id="toc_5">Disease progression</h3>
 
 <p>Susceptible people (<span style="display: inline-block;background-color:#D1E2FF">S</span>) may become Exposed (<span style="display: inline-block;background-color:#D1E2FF">E</span>) to the virus by mixing with infected people (<span style="display: inline-block;background-color:#D1E2FF">E, A, I<sub>1</sub> and I<sub>2</sub></span>).</p>
 
@@ -647,7 +650,7 @@ pre[class*="language-"] {
 
 <p><sub><sup>*</sup>We plan to consider partial / short-term immunity, see further discussion in <a href="#header_contd">Future research</a>.</sub></p>
 
-<h3 id="toc_5">New infections, transmission risk and social mixing</h3>
+<h3 id="toc_6">New infections, transmission risk and social mixing</h3>
 
 <p>New infections in a country often initially appear due to inward travel from overseas.  We model this very simply by assuming a baseline inward travel rate that declines over time, and that the percentage of returnees infected increases over time. We believe travel is no longer the main driver of new infections in the UK.</p>
 
@@ -659,27 +662,27 @@ pre[class*="language-"] {
 
 <p>Mixing rates are also determined by <span style="display: inline-block;background-color:#C2EDC0">Isolation State</span>.  We assume that <span style="display: inline-block;background-color:#C2EDC0">Home Quarantined</span> and <span style="display: inline-block;background-color:#C2EDC0">Normal</span> individuals mix with each other at different rates than they mix with themselves, that <span style="display: inline-block;background-color:#C2EDC0">Hospitalized</span> patients interact with only Hospital Staff, but that <span style="display: inline-block;background-color:#C2EDC0">Hospital Staff</span> can potentially interact with anyone. Social distancing or lockdown affects the whole population, including those in <span style="display: inline-block;background-color:#C2EDC0">Normal</span> isolation state.</p>
 
-<h3 id="toc_6">Hospitalisations</h3>
+<h3 id="toc_7">Hospitalisations</h3>
 
-<p>People with either symptomatic infection, or for other sicknesses (baseline hospitalisation) end up in hospital. People in <span style="display: inline-block;background-color:#D1E2FF">S</span> health state may return to non-hospitalised <span style="display: inline-block;background-color:#D1E2FF">S</span> state, however for now we assume that COVID-symptomatic people in <span style="display: inline-block;background-color:#D1E2FF">I</span> state generally remain in hospital until they are <span style="display: inline-block;background-color:#D1E2FF">Recovered</span> or <span style="display: inline-block;background-color:#D1E2FF">Dead</span>.</p>
+<p>People with either symptomatic infection or other diseases (baseline hospitalisation) end up in hospital. People in <span style="display: inline-block;background-color:#D1E2FF">S</span> health state may return to non-hospitalised <span style="display: inline-block;background-color:#D1E2FF">S</span> state, however for now we assume that COVID-symptomatic people in <span style="display: inline-block;background-color:#D1E2FF">I</span> state generally remain in hospital until they are <span style="display: inline-block;background-color:#D1E2FF">Recovered</span> or <span style="display: inline-block;background-color:#D1E2FF">Dead</span>.</p>
 
 <p>The rate of hospitalisation for a patient at a given age and infection stage is computed as the product of two independent rates, one based purely on the age (older people are generally more at risk of hospitalisation), and the other purely on how far the patient has progressed into the disease. We estimate the required parameters from hospitalisation data (<a href="https://webarchive.nationalarchives.gov.uk/20180328130140/http://digital.nhs.uk/catalogue/PUB22378">Hospital Episode Statistics</a>, <a href="https://www.england.nhs.uk/coronavirus/wp-content/uploads/sites/52/2020/03/phe-letter-to-trusts-re-daily-covid-19-hospital-surveillance-11-march-2020.pdf">CHESS - COVID-19 Hospitalisation in England Surveillance System</a>, <a href="https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/report-8-symptom-progression-covid-19/">Imperial Report #8 - Symptom progression of COVID-19</a>).</p>
 
-<h3 id="toc_7">Testing</h3>
+<h3 id="toc_8">Testing</h3>
 
 <p>Our model considers the three major types of SARS-CoV-2 tests, which detect either: (1) viral RNA; (2) viral protein; or (3) human antibodies formed against the virus.  We call these tests <strong><em>PCR</em></strong>, <strong><em>antigen</em></strong>, and <strong><em>antibody</em></strong> tests, respectively. </p>
 
-<p>We assume testing &ndash; which provides uncertain information about the underlying <span style="display: inline-block;background-color:#D1E2FF">Health State</span> &ndash; may modify the <span style="display: inline-block;background-color:#FFFCCC">Testing State</span>. This allows health and policy decisions to be made about the tested individual, for example earlier hospitalisation of (at-risk) positive individuals, or strict home quarantining (affecting the <span style="display: inline-block;background-color:#C2EDC0">Isolation State</span>).</p>
+<p>We assume that testing &ndash; which provides uncertain information about the underlying <span style="display: inline-block;background-color:#D1E2FF">Health State</span> &ndash; may modify the <span style="display: inline-block;background-color:#FFFCCC">Testing State</span>. This allows health and policy decisions to be made about the tested individual, for example earlier hospitalisation of (at-risk) positive individuals, or strict home quarantining (affecting the <span style="display: inline-block;background-color:#C2EDC0">Isolation State</span>).</p>
 
 <p>Individuals in the population transition between testing states depending on the type and number of tests administered; disease state of the population at time of administration; and disease state dependent characteristics of the administered test (such as false positive and negative rates).  We assumed that the number of each type of test administered each day grows as a sigmoid function, where the <strong><em>antigen</em></strong> and <strong><em>antibody</em></strong> tests become available later, but grow more steeply than <strong><em>PCR</em></strong> tests, due to their relative ease of administration.  <strong><em>PCR</em></strong> tests are assumed to be more accurate than <strong><em>antigen</em></strong> tests.  <strong><em>Antibody</em></strong> tests are positive much later in the disease than PCR and antigen tests, detecting the immunity formed in Recovered states.</p>
 
 <p>The UK has stockpiled over 17.5 million home antibody testing kits, which are currently not used due to concerns regarding the accuracy of these tests.</p>
 
-<h3 id="toc_8">Policies</h3>
+<h3 id="toc_9">Policies</h3>
 
 <p>In our model, policies can be used to affect the levels of social mixing, to adjust the distribution of tests, and to change the transition rates between quarantine states based on testing states. We describe three major types of policies here.</p>
 
-<h5 id="toc_9">Social distancing</h5>
+<h5 id="toc_10">Social distancing</h5>
 
 <p>Social distancing changes the social mixing in the whole population, including those in <span style="display: inline-block;background-color:#C2EDC0">Normal</span> isolation state.</p>
 
@@ -687,7 +690,7 @@ pre[class*="language-"] {
 
 <p>The effects of the full lockdown on the age-dependent social mixing matrix are estimated by Hoang et al. (<a href="http://www.socialcontactdata.org/tools/">http://www.socialcontactdata.org/tools/</a>), but these are admittedly preliminary results. To address this concern, we used the aforementioned study to define the direction of specific changes, but we treat the magnitude of these changes as an unknown parameter to be estimated from local data.</p>
 
-<h5 id="toc_10">Case Isolation</h5>
+<h5 id="toc_11">Case Isolation</h5>
 
 <p>We investigate the effects of testing-based case isolation via hospitalisation and/or home quarantining.  We are particularly interested in the relative utility of easy-to-scale but relatively inaccurate tests (antigen) versus more reliable but difficult-to-scale tests (PCR).</p>
 
@@ -695,9 +698,9 @@ pre[class*="language-"] {
 
 <p><sub><sup>*</sup>We plan to include partial lockdown release combined with case isolation, see further discussion in <a href="#header_contd">Future research</a> </sub></p>
 
-<h5 id="toc_11">Immunity passports</h5>
+<h5 id="toc_12">Immunity passports</h5>
 
-<p>Antibody test base &ldquo;proof of immunity&rdquo; is a potential individual-based exit strategy from lockdown, relying on the fact that truly immune individuals cannot contract or spread the disease, and thus are free to carry on with their normal daily life. </p>
+<p>An exit strategy based on allowing free travel to recovered persons (and thus presumed safe from the virus), has been frequently discussed.  Most commonly, these free travel &ldquo;proof of immunity&rdquo; passports are based on antibody tests.</p>
 
 <p>The success of such an exit strategy as the sole option relies upon the overall level of viral penetration, ultimately needing a large portion of the population to be infected to stop the risk (around ~60% immune leads to so-called &ldquo;herd immunity&rdquo;). Based on recent backlash around these measures, as well as initial evidence from the Netherlands <a href="https://twitter.com/globalhlthtwit/status/1250790553794592770?s=21">showing</a> only 3% current penetration, this is unlikely to be a useful goal by itself.</p>
 
@@ -705,7 +708,7 @@ pre[class*="language-"] {
 
 <p>We propose that for such a &ldquo;key worker immunity passport&rdquo; policy, the risk of false positives can be significantly reduced if the immunity passports are only given after an initial virus-positive test is confirmed by an antibody-positive test. These two test types can be considered independent as they test different targets, therefore their false positive rates can be multiplied; with a 5% false positive rate each, the risk can be reduced from 1 in 20 to 1 in 400. This can be further mitigated by regular repeated testing of people with immunity passports.</p>
 
-<h4 id="toc_12">Overall policy</h4>
+<h4 id="toc_13">Overall policy</h4>
 
 <p>A successful strategy likely combines ideas of the above, as well as potentially other not-yet-described methods.</p>
 
@@ -724,7 +727,7 @@ Our current results suggests that development and production should be heavily s
 
 <p><a name="header_fitting"></a></p>
 
-<h2 id="toc_13">Fitting the model and predicting the effects of future policies</h2>
+<h2 id="toc_14">Fitting the model and predicting the effects of future policies</h2>
 
 <p>Modelling needs to achieve two things, (1) explain existing data; and (2) give useful insight into the effect of decisions on the future.</p>
 
@@ -734,7 +737,7 @@ Our current results suggests that development and production should be heavily s
 
 <p>Finally, we keep a representative smaller sample of potential parameter settings that each represent a plausible scenario in the present, we call this the <strong><em>base ensemble</em></strong>. We then simulate the effects of various policies (varying the <strong><em>policy parameters</em></strong>) for each of the scenarios in our base ensemble, resulting in the &ldquo;spaghetti plots&rdquo; included in the Executive Summary (<a href="#header_figure1">Figure 1</a>).</p>
 
-<h3 id="toc_14">Parameter ensemble exploration to describe past data</h3>
+<h3 id="toc_15">Parameter ensemble exploration to describe past data</h3>
 
 <p>In order to evaluate whether a scenario generated by ensemble parameters describes the past data sufficiently well, we need to define the past data that we rely on, and what &ldquo;sufficiently well&rdquo; means. </p>
 
@@ -765,7 +768,7 @@ Our current results suggests that development and production should be heavily s
 
 <p>In order to evaluate whether a parameter setting describes reality sufficiently well, we calculate for each day and age group the likelihood of observing the real data, where the data is assumed to be distributed around the simulated value as a negative binomial distribution with an alpha dispersion parameter of 2. We consider scenarios above a minimum threshold to be &ldquo;plausible&rdquo;.</p>
 
-<p>We first choose parameter sets to investigate at random, given a set of (wide) prior assumptions about the individual parameters or combinations thereof.  We perform full simulation for each parameter set and compute their likelihoods.  When choosing the next set of parameters to investigate, we can estimate whether a parameter set may or may not represent a plausible scenario without actually doing the full simulation.  For this, we do Gaussian Process Regression with a random subset of data approximation as a surrogate to estimate the likelihoods &ndash; from these estimates a selection function chooses which parameter sets worth fully simulating. This is similar to Sequential Model Based Optimisation (SMBO).  Unlike in SMBO we do not look for a single &ldquo;best fit&rdquo; scenario, but rather want a broad picture of all &ldquo;plausible&rdquo; scenarios.  We therefore use a selection function that prioritises exploration rather than optimisation.</p>
+<p>We first choose parameter sets to investigate at random, given a set of (wide) prior assumptions about the individual parameters or combinations thereof.  We perform full simulation for each parameter set and compute their likelihoods.  When choosing the next set of parameters to investigate, we can estimate whether a parameter set may or may not represent a plausible scenario without actually doing the full simulation.  For this, we do Gaussian Process Regression with a random subset of data approximation as a surrogate to estimate the likelihoods &ndash; from these estimates a selection function chooses which parameter sets are worth fully simulating. This is similar to Sequential Model Based Optimisation (SMBO).  Unlike in SMBO we do not look for a single &ldquo;best fit&rdquo; scenario, but rather want a broad picture of all &ldquo;plausible&rdquo; scenarios.  We therefore use a selection function that prioritises exploration rather than optimisation.</p>
 
 <p>The set of all plausible scenarios are the <strong><em>full ensemble</em></strong>.</p>
 
@@ -779,7 +782,7 @@ Our current results suggests that development and production should be heavily s
 <li><sub>NewLabConfirmedCOVID19PatientsOnICU_HDU</sub></li>
 </ul>
 
-<h3 id="toc_15">Policy modelling</h3>
+<h3 id="toc_16">Policy modelling</h3>
 
 <p>For policy modelling we select a representative subset of the full ensemble computed above as the <strong><em>base ensemble</em></strong>. We then define a set of policies we wish to investigate (including precise numerical parameter settings, such as the ratio of antigen and antibody tests produced, how many of them will be made available by what date, or what ratio of tests should be given to people already tested to screen for false positives / negatives), this results in a set of <strong><em>policy parameters</em></strong>.</p>
 
@@ -787,9 +790,9 @@ Our current results suggests that development and production should be heavily s
 
 <p><a name="header_technology"></a></p>
 
-<h2 id="toc_16">Technology</h2>
+<h2 id="toc_17">Technology</h2>
 
-<h3 id="toc_17">Changing the model and adding data or policy ideas</h3>
+<h3 id="toc_18">Changing the model and adding data or policy ideas</h3>
 
 <p>One of the important requirements of models describing the pandemic is to be able to adapt very quickly and incorporate not only new data, but also new ideas. Experienced programmers will likely be horrified by the single ipython notebook that implements the whole model and the estimation of the full ensemble; however this also vastly increases its portability and &ldquo;hackability&rdquo;, meaning new ideas can be quickly incorporated.</p>
 
@@ -799,13 +802,13 @@ Our current results suggests that development and production should be heavily s
 
 <p>The most difficult thing to change currently is the basic state space structure, but even this is very possible without changing many of the main functions, as they all try to access only their own relevant tensor slices, thus being unaffected by adding other types of states. Regardless, such edits should be done carefully, and results double checked by temporarily disabling transitions to/from the newly added state(s), and verifying that the code after the changes reproduces the original results.</p>
 
-<h3 id="toc_18">Running the model</h3>
+<h3 id="toc_19">Running the model</h3>
 
 <p>Due to the relatively high computational needs (5 min / CPU core / simulation for 400 days forward simulation), we deploy the model on AWS EC2. In the current setup we use a distributed <a href="https://distributed.dask.org/en/latest/"><code>dask-scheduler</code></a> on a main node and a <a href="https://docs.dask.org/en/latest/setup/ssh.html"><code>dask-ssh</code></a> cluster connected to worker nodes. All nodes use the official <a href="https://aws.amazon.com/marketplace/pp/B07D53T8LQ?ref=cns_srchrow">Miniconda AMI</a> built on Amazon Linux, and the conda environment can be reproduced from the <code>environment.yml</code> file, then distributed to any worker nodes via <a href="https://conda.github.io/conda-pack/"><code>conda-pack</code></a>. Results are stored on an <a href="https://aws.amazon.com/efs/">AWS Elastic File System</a> mounted at <code>/mnt/efs</code>, written solely by the master node (as the file system failed to handle concurrent writing by all worker processes).</p>
 
 <p>For both the full ensemble as well as any policy ensemble runs, a separate timestamped folder is created, containing a large number of <code>... .npy</code> files, but importantly also a few <code>paramTable*</code> hdf files storing pandas tables. These store all non-default parameters used, as well as which parameter sets results in which <code>.npy</code> file (<code>out_fname</code> column). Default parameters are stored in a nested dictionary following the computation graph, <code>paramDict_default.cpkl</code>.</p>
 
-<h3 id="toc_19">Investigating the results</h3>
+<h3 id="toc_20">Investigating the results</h3>
 
 <p>Using the <code>paramTable</code>, one can access the results of any simulation by loading the corresponding <code>.npy</code> file, which simply stores a snapshot of the state tensor evaluated at the start of every simulation day, with time being the last dimension. Similarly for each state we store the &ldquo;new arrivals in this state today&rdquo; at the end of every simulation day, as this corresponds to much of the published data (which largely focuses on &ldquo;new X&rdquo; instead of &ldquo;current X&rdquo;, making it less trivial to compare with a state model); this can be loaded via using <code>out_fname[:-4] + &quot;_newOnly.npy&quot;</code> file path for any parameter set in the paramTable. Once the simulated results are loaded, it is trivial to produce plots of arbitrary tensor projections or slices.</p>
 
@@ -815,13 +818,13 @@ Our current results suggests that development and production should be heavily s
 
 <p><a name="header_contd"></a></p>
 
-<h2 id="toc_20">Summary of Assumptions &amp; Future research</h2>
+<h2 id="toc_21">Summary of Assumptions &amp; Future research</h2>
 
 <p>In our model, the Hospital Staff are never home quarantined / hospitalised themselves; our current representation is sufficient to keep track of their different social mixing levels and infection rates, but ideas are welcome for a better representation.</p>
 
 <p>We do not account for non-hospital COVID-related deaths. Our initial assumption on 01 April was that all people get hospitalised before dying to COVID-19, but recent ONS and media reports challenge this assumption, and will need to be incorporated soon &ndash; a difficult task given the lack of reliable data.</p>
 
-<p>Finally there are a lot of potential things to consider in terms of potential future policies, and we are looking to quickly implement any ideas that are considered by decision makers, and we hope to provide immediate feedback on their feasibility.</p>
+<p>Many potential future policies are left to consider. We are open to quickly implementing any ideas that are considered by policy makers, and we hope to provide immediate feedback on their feasibility.</p>
 
 <p>For further clarity, we summarised some of the key assumptions in the current implementation, why we did not prioritise a more detailed implementation given our current resources, and how they could be included in the future.</p>
 
@@ -844,7 +847,7 @@ Our current results suggests that development and production should be heavily s
 <td>Add slow R \(\rightarrow\) S transition</td>
 </tr>
 <tr>
-<td>Modelling at national level</td>
+<td>Outcomes can be modelled at national level</td>
 <td>- Widely and evenly spread pandemic</td>
 <td>Model regions and internal travel</td>
 </tr>
@@ -872,19 +875,19 @@ Our current results suggests that development and production should be heavily s
 
 <p><a name="header_contribute"></a></p>
 
-<h2 id="toc_21">Contribute</h2>
+<h2 id="toc_22">Contribute</h2>
 
-<h3 id="toc_22">Using the model in other countries</h3>
+<h3 id="toc_23">Using the model in other countries</h3>
 
-<p>We would be extremely happy for others to adapt the model to data and situations in other countries, which we could not yet do, as it requires high levels of country-specific domain knowledge that we do not possess.</p>
+<p>We would be extremely happy for others to adapt the model to data and situations in other countries.  Which did not attempt this because it requires high levels of country-specific domain knowledge that we do not possess.</p>
 
 <p>The code is fully available and thoroughly commented; you are welcome to fork the repository and try it for your own purposes. At this time we cannot offer technical support.</p>
 
-<h3 id="toc_23">Technological contributions</h3>
+<h3 id="toc_24">Technological contributions</h3>
 
 <p>We welcome any carefully considered suggestions, please discuss any improvements in issues.</p>
 
-<h3 id="toc_24">UK specific data and likelihood function contributions</h3>
+<h3 id="toc_25">UK specific data and likelihood function contributions</h3>
 
 <p>If you are aware of a dataset we should integrate, please discuss in the issues. We believe most available data should be very easily modelled by using the appropriate projection of output tensors alongside the correct likelihood.</p>
 
@@ -892,7 +895,7 @@ Our current results suggests that development and production should be heavily s
 
 <p><a name="header_team"></a></p>
 
-<h2 id="toc_25">The team</h2>
+<h2 id="toc_26">The team</h2>
 
 <p>Gergo Bohner and Gaurav Venkataraman initially surveyed the COVID-19 test types and their parameters, and found the need for a model that optimally allocates tests based on policy goals.</p>
 
@@ -910,6 +913,8 @@ Gaurav Venkataraman does the literature review, advises on modelling and policy 
 <p>We thank Public Health England for providing access to CHESS data to the Warwick Research Group. </p>
 
 <p>We thank Amazon Web Services for providing the computational resources for the project via their <a href="https://aws.amazon.com/research-credits/">AWS Cloud Credits for Research program</a> at short notice.</p>
+
+<p>We thank Amaia Uriz and Sashika Coxhead for comments and support.</p>
 
 
 
