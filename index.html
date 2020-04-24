@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>README</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">COEXI(S)T - Modelling COVID-19 exit strategies for policy makers in the United Kingdom</h1>
+
+<p><img align="right" src="images/COexist_logo.png" width="30%">
+<br></p>
+
+<h2 id="toc_1">Executive summary</h2>
+
+<p>The UK has just announced a test-and-trace strategy to end the lockdown.</p>
+
+<p>How many tests, and of which type, are sufficient to end the lockdown safely?</p>
+
+<p>Large scale testing strategies have universally relied on RT-PCR tests, which are exquisitely sensitive.  When performed perfectly, these tests are capable of detecting tens of viral RNA molecules in a given patient sample.</p>
+
+<p>The UK has had enormous difficulty scaling this test.  Modifications of RT-PCR which make the test easier to scale now exist - including pooling samples, skipping the RNA extraction step, and collecting samples with spit rather than swabs.  To our knowledge, tests with these modifications are not being deployed in the UK.</p>
+
+<p>The easiest tests to scale are likely &lsquo;antigen&rsquo; tests. These tests detect the presence of viral protein rather than RNA, and can be performed at &lsquo;point of care&rsquo; using lateral-flow-assays, the same technology as used in home pregnancy tests.  The tests can therefore be deployed at population scale without the construction and organizational overhead of large centralized testing facilities.</p>
+
+<p>There is concern that antigen tests and modifications of RT-PCR will be less sensitive than the tried-and-true RT-PCR test.  Is this concern justified?</p>
+
+<p>It is important to first note that competing tests must be compared with RT-PCR as deployed in practice; due to handling errors and RNA degradation, RT-PCR tests have been observed to have a relatively high false negative rate in the clinic.  Assuming that there is a tradeoff between sensitivity and scalability, which kind of tests will get us out of lockdown safely?</p>
+
+<p>We find that <b> the number of daily tests carried out is much more important than their sensitivity, for the success of a case-isolation based strategy</b>.</p>
+
+<p>Our results are based on a Susceptible-Exposed-Infectious-Recovered (SEIR) model, which is age-, testing-, quarantine- and hospitalisation-aware.  This model has a number of parameters which we estimate from best-available UK data.  We run the model with variations of these parameters - each of which represents a possible present state of circumstances in the UK - in order to test the robustness of our conclusion.</p>
+
+<p>We implemented and investigated a number of potential exit strategies, focusing primarily on the effects of virus-testing based case isolation.</p>
+
+<p>The implementation of our model is flexible and extensively commented, allowing us and others to investigate new policy ideas in a timely manner; we next aim to investigate the optimal use of the highly imperfect antibody tests that the United Kingdom already possesses in large numbers.</p>
+
+<p>There are a number of heterogeneities that our model does not capture.  Most important among these may be the effect of exposure level on disease progression.  There is evidence that the severity of COVID-19 correlates with the exposure level to SARS-CoV-2; this may significantly impact the effect of home quarantine policies on the spread of severe disease.  Additionally, our model does not account for the compliance rate of a given government policy.  It is possible that the use of a relatively lower-accuracy test will lead to low compliance with home quarantine issuances.</p>
+
+<hr>
+
+<p><a name="header_figure1"></a></p>
+
+<p><strong>Summary of results</strong> - This section compares four potential (exit strategy) policies across 91 different estimates of the current pandemic burden. Each estimate of current burden is represented by a single curve in each of the figures below.</p>
+
+<p>We first produce the expected result: stopping the lockdown entirely without a clear treatment for or vaccine against COVID-19 results in a massive second wave (Policy B, below). Most of the population becomes infected, eventually resulting in some form of herd immunity, likely at the cost of many more lives than other exit strategies.</p>
+
+<p align="center">
+<a href="http://htmlpreview.github.io/?https://github.com/gbohner/coexist/blob/master/images/figure1a.html" target="_blank"><img src="images/figure1a.png" width="48%"></a>
+<a href="http://htmlpreview.github.io/?https://github.com/gbohner/coexist/blob/master/images/figure1b.html" target="_blank"><img src="images/figure1b.png" width="48%"></a>
+</p>
+
+<p>Deploying reliable virus testing at the rate of 1 million tests per day, combined with a policy of 14 day home quarantine for positive test cases, has the expected flattening effect on the new infections curve (Policy C, below). However, ~60% of the total population still becomes infected relatively quickly, again yielding herd immunity.  The main advantage of this testing strategy is to mitigate the pressure on health services. </p>
+
+<p>Note that the results in Policy C assume that the 1 million &lsquo;reliable&rsquo; daily tests are deployed with a practical &ndash; not theoretical! &ndash; sensitivity of 90% around symptom onset (when patients present the highest viral loads), decreasing to 85% for later stages. Test sensitivity is assumed to be 70% for asymptomatic carriers. Such a test is likely better than is realistically achievable.</p>
+
+<p align="center">
+<a href="http://htmlpreview.github.io/?https://github.com/gbohner/coexist/blob/master/images/figure1c.html" target="_blank"><img src="images/figure1c.png" width="80%"></a>
+</p>
+
+<p>For comparison, we investigated the effect of instituting the same case-isolation home quarantine policy with a dramatically less sensitive virus test, but deployed at the level of 5 million tests per day (Policy D, below).  We find that this test, despite being so insensitive as to perhaps appear &lsquo;useless,&rsquo; is capable of not only flattening the curve, but effectively suppressing it.  This prevents a large portion of the population from contracting the disease at all. This supression buys time to develop vaccines and vaccination-based immunity, whilst going about normal levels of social mixing (for those not home quarantined). </p>
+
+<p>The results in Policy D assume that 5 million &lsquo;useless&rsquo; daily tests are deployed having only 60% maximum sensitivity around symptom onset, reducing to 50% for later stages of the disease, and 20% for asymptomatic carriers.</p>
+
+<p align="center">
+<a href="http://htmlpreview.github.io/?https://github.com/gbohner/coexist/blob/master/images/figure1d.html" target="_blank"><img src="images/figure1d.png" width="80%"></a>
+</p>
+
+<p>One drawback of employing the &lsquo;larger number but lower reliability&rsquo; testing strategy is economic cost.  We assume a false positive rate of 5% for both tests (likely higher than is realistic!); deploying more tests then causes a higher absolute number of healthy but quarantined false positives. The unnecessary transient quarantining of approximately an extra 3 million people (~2% of England&rsquo;s population) is arguably justified in the context of the proposed health benefits of suppressing viral transmission, as well as the economic benefits of ending the current lockdown.</p>
+
+<p align="center">
+<a href="http://htmlpreview.github.io/?https://github.com/gbohner/coexist/blob/master/images/figure1e.html" target="_blank"><img src="images/figure1e.png" width="80%"></a>
+</p>
+
+<p><em>The above figures were generated on 22 April 2020, using a full model fit that took place 21 April 2020, which incorporated hospitalisation, testing and mortality data up to and including 14 April 2020. At the time of fitting, more recent data was excluded due to its incompleteness.</em></p>
+
+<h2 id="toc_2">Goals of modeling</h2>
+
+<p>Our model can be used to investiage a number of scenarios not described above. Broadly, we sought to develop a robust epidemiological model to forecast the potential effects of specific (exit strategy) policies in the UK, given the uncertainty in the present, through:</p>
+
+<ol>
+<li><em>Capturing the majority of available data</em> released about COVID-19, rather than focusing on particular datasets or outcomes</li>
+<li><em>Directly representing interventions</em> as mechanistic parameters</li>
+<li>Investigating the effects of interventions in <em>thousands of plausible scenarios</em> that describe the present</li>
+<li>Suggesting interventions that <em>achieve policy targets</em> with high likelihood </li>
+<li><em>Quickly adapting</em> a highly mutable model to the changing present</li>
+</ol>
+
+<p>This document describes the <a href="#header_model">model</a>, how it uses past data to <a href="#header_fitting">estimate current scenarios</a> and predict the effects of policies, and describes the <a href="#header_technology">technology</a> which allows it to quickly adapt to new incoming data or policy ideas.</p>
+
+<p><a name="header_model"></a></p>
+
+<h2 id="toc_3">Model details</h2>
+
+<p><a href="https://github.com/gbohner/coexist/">Link to repository with source code.</a></p>
+
+<p><p align="center">
+ <img src="images/dynamicalModel.png" width="70%">
+ </p></p>
+
+<p>We use a standard <a href="https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SEIR_model">SEIR model</a> extended such that we can capture available information both about the disease progression, as well as how accessible various disease states are by testing. Being tested might cause a transition in the <span style="display: inline-block;background-color:#FFFCCC">Testing State</span>; the rate of such a transition depends both on the <span style="display: inline-block;background-color:#D1E2FF">Health State</span> (<a href="#healthStates">explanatory table</a>) as well the details of the test used.</p>
+
+<p>Our model is age-dependent; individuals are assigned an <span style="display: inline-block;background-color:#FFD4D1">Age State</span>, which strongly influences most transition rates, and allows policies to be applied differentially to different subsets of the population.</p>
+
+<p>The main policy-making tool is the implementation of quarantining and social distancing in order to keep hospitals and medical staff under tolerable levels of pressure. We represent <span style="display: inline-block;background-color:#C2EDC0">Isolation States</span> to investigate the effects of various interventions on policy targets relating to hospitalisation rates and economic freedom, while describing the different health outcomes via the <span style="display: inline-block;background-color:#D1E2FF">Health States</span>.</p>
+
+<p>Additional details follow; see also the heavily commented code which implements the model: <a href="https://github.com/gbohner/coexist/blob/master/model_COVID_testing.ipynb">notebook</a></p>
+
+<p><a name="healthStates"></a></p>
+
+<h3 id="toc_4">Disease progression</h3>
+
+<p>Susceptible people (<span style="display: inline-block;background-color:#D1E2FF">S</span>) may become Exposed (<span style="display: inline-block;background-color:#D1E2FF">E</span>) to the virus by mixing with infected people (<span style="display: inline-block;background-color:#D1E2FF">E, A, I<sub>1</sub> and I<sub>2</sub></span>).</p>
+
+<p>The infected may progress through the infection Asymptomatic (<span style="display: inline-block;background-color:#D1E2FF">A</span>) and eventually Recover (<span style="display: inline-block;background-color:#D1E2FF">R</span>), or become symptomatic and more Infectious (<span style="display: inline-block;background-color:#D1E2FF">I<sub>1</sub>, I<sub>2</sub></span>), spreading the disease and leading to either Death (<span style="display: inline-block;background-color:#D1E2FF">D</span>) or Recovery (<span style="display: inline-block;background-color:#D1E2FF">R<sub>1</sub>, R<sub>2</sub></span></span>).</p>
+
+<p>Recovered people develop more effective antibodies against the virus, and are considered immune<sup>*</sup>.</p>
+
+<p><center></p>
+
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+<th>Test outcome</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>S</td>
+<td>Susceptible</td>
+<td>Negative</td>
+</tr>
+<tr>
+<td>E</td>
+<td>Exposed</td>
+<td>Very weakly virus positive</td>
+</tr>
+<tr>
+<td>A</td>
+<td>Asymptomatic</td>
+<td>Weakly virus positive</td>
+</tr>
+<tr>
+<td>I<sub>1</sub></td>
+<td>Symptomatic early</td>
+<td>Strongly virus positive</td>
+</tr>
+<tr>
+<td>I<sub>2</sub></td>
+<td>Symptomatic late</td>
+<td>Medium virus positive <br>Weakly IgM antibody positive</td>
+</tr>
+<tr>
+<td>R<sub>1</sub></td>
+<td>Recovered early</td>
+<td>IgM antibody positive</td>
+</tr>
+<tr>
+<td>R<sub>2</sub></td>
+<td>Recovered late</td>
+<td>IgM+IgG antibody positive</td>
+</tr>
+<tr>
+<td>D</td>
+<td>COVID-related death</td>
+<td>May be virus or antibody positive</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Table 1</strong> - Description of Health States and test outcomes
+</center></p>
+
+<p><sub><sup>*</sup>We plan to consider partial / short-term immunity, see further discussion in <a href="#header_contd">Future research</a>.</sub></p>
+
+<h3 id="toc_5">New infections, transmission risk and social mixing</h3>
+
+<p>New infections in a country often initially appear due to inward travel from overseas.  We model this very simply by assuming a baseline inward travel rate that declines over time, and that the percentage of returnees infected increases over time. We believe travel is no longer the main driver of new infections in the UK.</p>
+
+<p>For within-country infections, social mixing between infected and susceptible people determines the rate of possible new infections; this is multiplied by the infection stage dependent transmission risk, yielding the number of actual new infections.</p>
+
+<p>The transmission risk in various infection stages is one of the main known unknowns about SARS-CoV-2, and we consider <a href="#header_fitting">numerous scenarios</a> for it.</p>
+
+<p>Social mixing under normal circumstances has been extensively studied.  We use survey-based contact data via <a href="http://www.socialcontactdata.org/tools/">http://www.socialcontactdata.org/tools/</a> (<a href="https://insights.ovid.com/crossref?an=00001648-201909000-00015">paper</a>) to estimate age-dependent mixing rates of the population.</p>
+
+<p>Mixing rates are also determined by <span style="display: inline-block;background-color:#C2EDC0">Isolation State</span>.  We assume that <span style="display: inline-block;background-color:#C2EDC0">Home Quarantined</span> and <span style="display: inline-block;background-color:#C2EDC0">Normal</span> individuals mix with each other at different rates than they mix with themselves, that <span style="display: inline-block;background-color:#C2EDC0">Hospitalized</span> patients interact with only Hospital Staff, but that <span style="display: inline-block;background-color:#C2EDC0">Hospital Staff</span> can potentially interact with anyone. Social distancing or lockdown affects the whole population, including those in <span style="display: inline-block;background-color:#C2EDC0">Normal</span> isolation state.</p>
+
+<h3 id="toc_6">Hospitalisations</h3>
+
+<p>People with either symptomatic infection, or for other sicknesses (baseline hospitalisation) end up in hospital. People in <span style="display: inline-block;background-color:#D1E2FF">S</span> health state may return to non-hospitalised <span style="display: inline-block;background-color:#D1E2FF">S</span> state, however for now we assume that COVID-symptomatic people in <span style="display: inline-block;background-color:#D1E2FF">I</span> state generally remain in hospital until they are <span style="display: inline-block;background-color:#D1E2FF">Recovered</span> or <span style="display: inline-block;background-color:#D1E2FF">Dead</span>.</p>
+
+<p>The rate of hospitalisation for a patient at a given age and infection stage is computed as the product of two independent rates, one based purely on the age (older people are generally more at risk of hospitalisation), and the other purely on how far the patient has progressed into the disease. We estimate the required parameters from hospitalisation data (<a href="https://webarchive.nationalarchives.gov.uk/20180328130140/http://digital.nhs.uk/catalogue/PUB22378">Hospital Episode Statistics</a>, <a href="https://www.england.nhs.uk/coronavirus/wp-content/uploads/sites/52/2020/03/phe-letter-to-trusts-re-daily-covid-19-hospital-surveillance-11-march-2020.pdf">CHESS - COVID-19 Hospitalisation in England Surveillance System</a>, <a href="https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/report-8-symptom-progression-covid-19/">Imperial Report #8 - Symptom progression of COVID-19</a>).</p>
+
+<h3 id="toc_7">Testing</h3>
+
+<p>Our model considers the three major types of SARS-CoV-2 tests, which detect either: (1) viral RNA; (2) viral protein; or (3) human antibodies formed against the virus.  We call these tests <strong><em>PCR</em></strong>, <strong><em>antigen</em></strong>, and <strong><em>antibody</em></strong> tests, respectively. </p>
+
+<p>We assume testing &ndash; which provides uncertain information about the underlying <span style="display: inline-block;background-color:#D1E2FF">Health State</span> &ndash; may modify the <span style="display: inline-block;background-color:#FFFCCC">Testing State</span>. This allows health and policy decisions to be made about the tested individual, for example earlier hospitalisation of (at-risk) positive individuals, or strict home quarantining (affecting the <span style="display: inline-block;background-color:#C2EDC0">Isolation State</span>).</p>
+
+<p>Individuals in the population transition between testing states depending on the type and number of tests administered; disease state of the population at time of administration; and disease state dependent characteristics of the administered test (such as false positive and negative rates).  We assumed that the number of each type of test administered each day grows as a sigmoid function, where the <strong><em>antigen</em></strong> and <strong><em>antibody</em></strong> tests become available later, but grow more steeply than <strong><em>PCR</em></strong> tests, due to their relative ease of administration.  <strong><em>PCR</em></strong> tests are assumed to be more accurate than <strong><em>antigen</em></strong> tests.  <strong><em>Antibody</em></strong> tests are positive much later in the disease than PCR and antigen tests, detecting the immunity formed in Recovered states.</p>
+
+<p>The UK has stockpiled over 17.5 million home antibody testing kits, which are currently not used due to concerns regarding the accuracy of these tests.</p>
+
+<h3 id="toc_8">Policies</h3>
+
+<p>In our model, policies can be used to affect the levels of social mixing, to adjust the distribution of tests, and to change the transition rates between quarantine states based on testing states. We describe three major types of policies here.</p>
+
+<h5 id="toc_9">Social distancing</h5>
+
+<p>Social distancing changes the social mixing in the whole population, including those in <span style="display: inline-block;background-color:#C2EDC0">Normal</span> isolation state.</p>
+
+<p>Unlike other reports, here we do not (yet) wish to disentangle the effects of individual quarantine operations (school closures, working from home, recommended physical distancing), but rather investigate the effects of current full lockdown (in effect since 24 March in the UK), versus testing-based, informed and targeted policies, described below.</p>
+
+<p>The effects of the full lockdown on the age-dependent social mixing matrix are estimated by Hoang et al. (<a href="http://www.socialcontactdata.org/tools/">http://www.socialcontactdata.org/tools/</a>), but these are admittedly preliminary results. To address this concern, we used the aforementioned study to define the direction of specific changes, but we treat the magnitude of these changes as an unknown parameter to be estimated from local data.</p>
+
+<h5 id="toc_10">Case Isolation</h5>
+
+<p>We investigate the effects of testing-based case isolation via hospitalisation and/or home quarantining.  We are particularly interested in the relative utility of easy-to-scale but relatively inaccurate tests (antigen) versus more reliable but difficult-to-scale tests (PCR).</p>
+
+<p>Case isolation is considered both together with social distancing measures above, or as a potential exit strategy by a full release of the lockdown<sup>*</sup>. </p>
+
+<p><sub><sup>*</sup>We plan to include partial lockdown release combined with case isolation, see further discussion in <a href="#header_contd">Future research</a> </sub></p>
+
+<h5 id="toc_11">Immunity passports</h5>
+
+<p>Antibody test base &ldquo;proof of immunity&rdquo; is a potential individual-based exit strategy from lockdown, relying on the fact that truly immune individuals cannot contract or spread the disease, and thus are free to carry on with their normal daily life. </p>
+
+<p>The success of such an exit strategy as the sole option relies upon the overall level of viral penetration, ultimately needing a large portion of the population to be infected to stop the risk (around ~60% immune leads to so-called &ldquo;herd immunity&rdquo;). Based on recent backlash around these measures, as well as initial evidence from the Netherlands <a href="https://twitter.com/globalhlthtwit/status/1250790553794592770?s=21">showing</a> only 3% current penetration, this is unlikely to be a useful goal by itself.</p>
+
+<p>However, another use being considered is immunity passports for key workers (especially NHS staff), who could safely return to work. Using antibody tests in this way bears another major risk, namely potential large number of false positives at low viral penetration, even with very good (only 5% false positives) tests; see this <a href="https://twitter.com/zbinney_NFLinj/status/1245789672833417217">twitter thread</a> for an explanation. False positives are an immense risk for an immunity test, as people believing their positive results could put themselves at unnecessary high risk.</p>
+
+<p>We propose that for such a &ldquo;key worker immunity passport&rdquo; policy, the risk of false positives can be significantly reduced if the immunity passports are only given after an initial virus-positive test is confirmed by an antibody-positive test. These two test types can be considered independent as they test different targets, therefore their false positive rates can be multiplied; with a 5% false positive rate each, the risk can be reduced from 1 in 20 to 1 in 400. This can be further mitigated by regular repeated testing of people with immunity passports.</p>
+
+<h4 id="toc_12">Overall policy</h4>
+
+<p>A successful strategy likely combines ideas of the above, as well as potentially other not-yet-described methods.</p>
+
+<p>Importantly, however, there are decisions that can, and should be made now. We consider one such decision to be which test types to purchase and/or scale up the production of.</p>
+
+<div style="border-radius: 25px; background-color:#FFFCCC; width: 70%; padding: 20px; margin: auto;">
+We believe that antigen and antibody tests rely on similar reagents and factories, and thus pose a major question: in what ratio we should produce them? 
+Our current results suggests that development and production should be heavily skewed towards antigen tests, as &ndash; unlike antibody tests &ndash; they represent a real potential exit strategy, as well as being a prerequisite for immunity passports. 
+<br>
+<br>
+<b>We do not yet have a proposal for the exact ratio of antigen lateral flow assay tests to antibody lateral flow immunoassays, but we are actively exploring the effects.</b>
+</div>
+
+<p><br>
+<br></p>
+
+<p><a name="header_fitting"></a></p>
+
+<h2 id="toc_13">Fitting the model and predicting the effects of future policies</h2>
+
+<p>Modelling needs to achieve two things, (1) explain existing data; and (2) give useful insight into the effect of decisions on the future.</p>
+
+<p>Our overall strategy is as follows; we first try and characterise as many as the model parameters as possible based on historical data, whilst explicitly incorporating estimates of the uncertainty associated with each parameter based how reliably we can estimate them. For example, baseline hospitalisation rates of various age groups in the UK is very well understood, whereas there is increasingly more uncertainty around baseline social mixing, the effects of social distancing, and SARS-CoV-2&rsquo;s transmission rates.</p>
+
+<p>We represent these levels of uncertainty in all parameters that explain the (near) past; we call these <strong><em>ensemble parameters</em></strong>. We explore millions of settings of such parameters, and weed out the ones that are not consistent with what has happened since the beginning of the pandemic, ie. the observed data.</p>
+
+<p>Finally, we keep a representative smaller sample of potential parameter settings that each represent a plausible scenario in the present, we call this the <strong><em>base ensemble</em></strong>. We then simulate the effects of various policies (varying the <strong><em>policy parameters</em></strong>) for each of the scenarios in our base ensemble, resulting in the &ldquo;spaghetti plots&rdquo; included in the Executive Summary (<a href="#header_figure1">Figure 1</a>).</p>
+
+<h3 id="toc_14">Parameter ensemble exploration to describe past data</h3>
+
+<p>In order to evaluate whether a scenario generated by ensemble parameters describes the past data sufficiently well, we need to define the past data that we rely on, and what &ldquo;sufficiently well&rdquo; means. </p>
+
+<p>We currently use the following two datasets as targets, but are actively looking to include more:</p>
+
+<table>
+<thead>
+<tr>
+<th>Observation</th>
+<th>Dataset</th>
+<th>Link</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Daily in-hospital deaths in England<br>of people with positive virus tests<br>in each age group</td>
+<td>NHS England COVID-19 daily deaths</td>
+<td><a href="https://www.england.nhs.uk/statistics/statistical-work-areas/covid-19-daily-deaths/">Link</a></td>
+</tr>
+<tr>
+<td>Daily new positive virus tests in England<br>of patients admitted to NHS hospitals</td>
+<td>COVID-19 Hospitalisation in England Surveillance System<br>Only daily aggregate at country level<sup>*</sup></td>
+<td><a href="https://www.england.nhs.uk/coronavirus/wp-content/uploads/sites/52/2020/03/phe-letter-to-trusts-re-daily-covid-19-hospital-surveillance-11-march-2020.pdf">Link to request access</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>In order to evaluate whether a parameter setting describes reality sufficiently well, we calculate for each day and age group the likelihood of observing the real data, where the data is assumed to be distributed around the simulated value as a negative binomial distribution with an alpha dispersion parameter of 2. We consider scenarios above a minimum threshold to be &ldquo;plausible&rdquo;.</p>
+
+<p>We first choose parameter sets to investigate at random, given a set of (wide) prior assumptions about the individual parameters or combinations thereof.  We perform full simulation for each parameter set and compute their likelihoods.  When choosing the next set of parameters to investigate, we can estimate whether a parameter set may or may not represent a plausible scenario without actually doing the full simulation.  For this, we do Gaussian Process Regression with a random subset of data approximation as a surrogate to estimate the likelihoods &ndash; from these estimates a selection function chooses which parameter sets worth fully simulating. This is similar to Sequential Model Based Optimisation (SMBO).  Unlike in SMBO we do not look for a single &ldquo;best fit&rdquo; scenario, but rather want a broad picture of all &ldquo;plausible&rdquo; scenarios.  We therefore use a selection function that prioritises exploration rather than optimisation.</p>
+
+<p>The set of all plausible scenarios are the <strong><em>full ensemble</em></strong>.</p>
+
+<p><sub><sup>*</sup>More precisely the daily count data from the following columns was aggregated to national level, broken down by coarse-grained age groups. This data does not contain any personally identifiable data. Columns used were: </sub></p>
+
+<ul>
+<li><sub>NewHospitalAdmissionsWithAcute RespiratoryInfectionAdmittedDuringThePast24Hours</sub></li>
+<li><sub>AllAdmittedPatientsTestedForCOVID19</sub></li>
+<li><sub>AllAdmittedPatientsWithNewLabConfirmedCOVID19</sub></li>
+<li><sub>NewICU_HDUAdmissionsWithAcuteRespiratoryInfection</sub></li>
+<li><sub>NewLabConfirmedCOVID19PatientsOnICU_HDU</sub></li>
+</ul>
+
+<h3 id="toc_15">Policy modelling</h3>
+
+<p>For policy modelling we select a representative subset of the full ensemble computed above as the <strong><em>base ensemble</em></strong>. We then define a set of policies we wish to investigate (including precise numerical parameter settings, such as the ratio of antigen and antibody tests produced, how many of them will be made available by what date, or what ratio of tests should be given to people already tested to screen for false positives / negatives), this results in a set of <strong><em>policy parameters</em></strong>.</p>
+
+<p>We investigate the effects of each policy parameter set on each scenario in the base ensemble, and summarise the &ldquo;effectiveness&rdquo; of a policy by the percentage of scenarios in which they achieve particular <strong><em>policy target goals</em></strong>, such as keeping the peak hospitalisations under a threshold for the whole year, or keeping the overall death toll under a limit.</p>
+
+<p><a name="header_technology"></a></p>
+
+<h2 id="toc_16">Technology</h2>
+
+<h3 id="toc_17">Changing the model and adding data or policy ideas</h3>
+
+<p>One of the important requirements of models describing the pandemic is to be able to adapt very quickly and incorporate not only new data, but also new ideas. Experienced programmers will likely be horrified by the single ipython notebook that implements the whole model and the estimation of the full ensemble; however this also vastly increases its portability and &ldquo;hackability&rdquo;, meaning new ideas can be quickly incorporated.</p>
+
+<p>At the moment (if the base state space structure remains unchanged), the model is very robust to including new kinds of transitions (such as fading immunity) or implementing a number of new policies. The code automatically builds the computation and parameter graphs, reducing potential errors, and making the setting of policy parameters and priors of ensemble parameters very accessible and convenient.</p>
+
+<p>It is also very easy to include new datasets and corresponding likelihoods, so long as one of the state tensor projections results in the same type of observed data; this is often the case due to our rich state representation.</p>
+
+<p>The most difficult thing to change currently is the basic state space structure, but even this is very possible without changing many of the main functions, as they all try to access only their own relevant tensor slices, thus being unaffected by adding other types of states. Regardless, such edits should be done carefully, and results double checked by temporarily disabling transitions to/from the newly added state(s), and verifying that the code after the changes reproduces the original results.</p>
+
+<h3 id="toc_18">Running the model</h3>
+
+<p>Due to the relatively high computational needs (5 min / CPU core / simulation for 400 days forward simulation), we deploy the model on AWS EC2. In the current setup we use a distributed <a href="https://distributed.dask.org/en/latest/"><code>dask-scheduler</code></a> on a main node and a <a href="https://docs.dask.org/en/latest/setup/ssh.html"><code>dask-ssh</code></a> cluster connected to worker nodes. All nodes use the official <a href="https://aws.amazon.com/marketplace/pp/B07D53T8LQ?ref=cns_srchrow">Miniconda AMI</a> built on Amazon Linux, and the conda environment can be reproduced from the <code>environment.yml</code> file, then distributed to any worker nodes via <a href="https://conda.github.io/conda-pack/"><code>conda-pack</code></a>. Results are stored on an <a href="https://aws.amazon.com/efs/">AWS Elastic File System</a> mounted at <code>/mnt/efs</code>, written solely by the master node (as the file system failed to handle concurrent writing by all worker processes).</p>
+
+<p>For both the full ensemble as well as any policy ensemble runs, a separate timestamped folder is created, containing a large number of <code>... .npy</code> files, but importantly also a few <code>paramTable*</code> hdf files storing pandas tables. These store all non-default parameters used, as well as which parameter sets results in which <code>.npy</code> file (<code>out_fname</code> column). Default parameters are stored in a nested dictionary following the computation graph, <code>paramDict_default.cpkl</code>.</p>
+
+<h3 id="toc_19">Investigating the results</h3>
+
+<p>Using the <code>paramTable</code>, one can access the results of any simulation by loading the corresponding <code>.npy</code> file, which simply stores a snapshot of the state tensor evaluated at the start of every simulation day, with time being the last dimension. Similarly for each state we store the &ldquo;new arrivals in this state today&rdquo; at the end of every simulation day, as this corresponds to much of the published data (which largely focuses on &ldquo;new X&rdquo; instead of &ldquo;current X&rdquo;, making it less trivial to compare with a state model); this can be loaded via using <code>out_fname[:-4] + &quot;_newOnly.npy&quot;</code> file path for any parameter set in the paramTable. Once the simulated results are loaded, it is trivial to produce plots of arbitrary tensor projections or slices.</p>
+
+<p>We are currently finishing work on a fully interactive dashboard, that enables users to investigate and compare a set of policies from one such <code>paramTable</code> by running the dashboard with the <code>-r &lt;RUN_FOLDER&gt;</code> flag. We also aim to provide a web service running pre-created dashboards for non-technical users.</p>
+
+<p>We are also working on other tools that help investigate in which scenarios certain policies work well or fail. </p>
+
+<p><a name="header_contd"></a></p>
+
+<h2 id="toc_20">Summary of Assumptions &amp; Future research</h2>
+
+<p>In our model, the Hospital Staff are never home quarantined / hospitalised themselves; our current representation is sufficient to keep track of their different social mixing levels and infection rates, but ideas are welcome for a better representation.</p>
+
+<p>We do not account for non-hospital COVID-related deaths. Our initial assumption on 01 April was that all people get hospitalised before dying to COVID-19, but recent ONS and media reports challenge this assumption, and will need to be incorporated soon &ndash; a difficult task given the lack of reliable data.</p>
+
+<p>Finally there are a lot of potential things to consider in terms of potential future policies, and we are looking to quickly implement any ideas that are considered by decision makers, and we hope to provide immediate feedback on their feasibility.</p>
+
+<p>For further clarity, we summarised some of the key assumptions in the current implementation, why we did not prioritise a more detailed implementation given our current resources, and how they could be included in the future.</p>
+
+<p><br>
+<center></p>
+
+<table>
+<thead>
+<tr>
+<th>Assumption</th>
+<th>Why not a priority?</th>
+<th>Future Implementation</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Long-lasting immunity</td>
+<td>- Few known cases of reinfection<br>- Lack of data on length of immunity</td>
+<td>Add slow R \(\rightarrow\) S transition</td>
+</tr>
+<tr>
+<td>Modelling at national level</td>
+<td>- Widely and evenly spread pandemic</td>
+<td>Model regions and internal travel</td>
+</tr>
+<tr>
+<td>Working and self-isolating population are mixing at an average rate</td>
+<td>- The average mixing describes virus spread sufficiently<br> - Available social mixing and testing data does not differentiate</td>
+<td>Add key (non-hospital) workers as a separate population</td>
+</tr>
+<tr>
+<td>Constant rate of contact throughout longterm lockdown</td>
+<td>- Lack of data available</td>
+<td>Estimate compliance with lockdown and add as time-series varying the efficiency of lockdown</td>
+</tr>
+<tr>
+<td>No explicit model of tracing</td>
+<td>- Tracing is not yet happening at scale in the UK<br>- High uncertainty in potential implementations</td>
+<td>Include as more efficient distribution of available tests / quarantining of untested people.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Table 2</strong> - Assumptions and future implementation</p>
+
+<p></center></p>
+
+<p><a name="header_contribute"></a></p>
+
+<h2 id="toc_21">Contribute</h2>
+
+<h3 id="toc_22">Using the model in other countries</h3>
+
+<p>We would be extremely happy for others to adapt the model to data and situations in other countries, which we could not yet do, as it requires high levels of country-specific domain knowledge that we do not possess.</p>
+
+<p>The code is fully available and thoroughly commented; you are welcome to fork the repository and try it for your own purposes. At this time we cannot offer technical support.</p>
+
+<h3 id="toc_23">Technological contributions</h3>
+
+<p>We welcome any carefully considered suggestions, please discuss any improvements in issues.</p>
+
+<h3 id="toc_24">UK specific data and likelihood function contributions</h3>
+
+<p>If you are aware of a dataset we should integrate, please discuss in the issues. We believe most available data should be very easily modelled by using the appropriate projection of output tensors alongside the correct likelihood.</p>
+
+<p>If you can provide the data reference alongside an automatic python preprocessing script (refreshing it from the source on every run) as well as the appropriate likelihood function, it will have a high chance of being included.</p>
+
+<p><a name="header_team"></a></p>
+
+<h2 id="toc_25">The team</h2>
+
+<p>Gergo Bohner and Gaurav Venkataraman initially surveyed the COVID-19 test types and their parameters, and found the need for a model that optimally allocates tests based on policy goals.</p>
+
+<p>Gergo Bohner implemented the model, fitting and policies. <br>
+Gaurav Venkataraman does the literature review, advises on modelling and policy ideas, handles communication and outreach.</p>
+
+<p>Harrison Wilde designed and implemented data pipelining for analysis of the models and the visualisation dashboard;<br>Jonathan Bechtel provided design ideas and technical assistance.</p>
+
+<p>Sebastian Vollmer handles data governance, while contributing to academic outreach and idea review.</p>
+
+<p>We thank Bilal Mateen for comments.</p>
+
+<p>We gratefully acknowledge multiple valuable discussions with John Aston, Matt Keeling, Ian Hall, Thomas House and Simon Frost.</p>
+
+<p>We thank Public Health England for providing access to CHESS data to the Warwick Research Group. </p>
+
+<p>We thank Amazon Web Services for providing the computational resources for the project via their <a href="https://aws.amazon.com/research-credits/">AWS Cloud Credits for Research program</a> at short notice.</p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>

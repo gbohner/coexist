@@ -1,0 +1,8 @@
+run_20200422T001618, New simply policy run on top of new GP ensemble
+run_20200421T002117, New GP based full ensemble - data until 14 Apr and better in-hospital-symptom settings
+run_20200419T113321, Small policy run on GP base ensemble with only case isolation policy and only varying test numbers and types
+run_20200415T082909, Medium policy run on GP base ensemble with 3 policies - case iso / keepSocial / stopSocial
+run_20200414T210254, GP based full ensemble
+run_20200413T140923, Large policy run based on random ensemble - outdated and bad
+run_20200411T134739, random full ensemble
+
