@@ -13,7 +13,7 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>COEXI(S)T - Exit strategies for COVID-19</title>
+<title>Modelling COVID-19 exit strategies</title>
 
 
 <style type="text/css">
@@ -476,10 +476,7 @@ pre[class*="language-"] {
 
 <body>
 
-<h1 id="toc_0">COEXI(S)T - Modelling COVID-19 exit strategies for policy makers in the United Kingdom</h1>
-
-<p><img align="right" src="images/COexist_logo.png" width="30%">
-<br></p>
+<h1 id="toc_0">Modelling COVID-19 exit strategies for policy makers in the United Kingdom</h1>
 
 <h2 id="toc_1">Executive summary</h2>
 
@@ -558,9 +555,13 @@ pre[class*="language-"] {
 
 <p>This document describes the <a href="#header_model">model</a>, how it uses past data to <a href="#header_fitting">estimate current scenarios</a> and predict the effects of policies, and describes the <a href="#header_technology">technology</a> which allows it to quickly adapt to new incoming data or policy ideas.</p>
 
+<br><br>
 <p><a name="header_model"></a></p>
-
+<p><img align="right" src="images/COexist_logo.png" width="30%">
+</p>
+<br>
 <h2 id="toc_3">Model details</h2>
+
 
 <p><a href="https://github.com/gbohner/coexist/">Link to repository with source code.</a></p>
 
@@ -568,7 +569,7 @@ pre[class*="language-"] {
  <img src="images/dynamicalModel.png" width="70%">
  </p></p>
 
-<p>We use a standard <a href="https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SEIR_model">SEIR model</a> extended such that we can capture available information both about the disease progression, as well as how accessible various disease states are by testing. Being tested might cause a transition in the <span style="display: inline-block;background-color:#FFFCCC">Testing State</span>; the rate of such a transition depends both on the <span style="display: inline-block;background-color:#D1E2FF">Health State</span> (<a href="#healthStates">explanatory table</a>) as well the details of the test used.</p>
+<p><em>COEXI(S)T</em> is a standard <a href="https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SEIR_model">SEIR model</a> extended such that we can capture available information both about the disease progression, as well as how accessible various disease states are by testing. Being tested might cause a transition in the <span style="display: inline-block;background-color:#FFFCCC">Testing State</span>; the rate of such a transition depends both on the <span style="display: inline-block;background-color:#D1E2FF">Health State</span> (<a href="#healthStates">explanatory table</a>) as well the details of the test used.</p>
 
 <p>Our model is age-dependent; individuals are assigned an <span style="display: inline-block;background-color:#FFD4D1">Age State</span>, which strongly influences most transition rates, and allows policies to be applied differentially to different subsets of the population.</p>
 
